@@ -7,8 +7,10 @@ int main(){
     printf("Digite um valor:");
     scanf("%f",&n);
     E=0;
-    for(int i=1;i<n;i++){
+    int i=1;
+    while (i<n){
         E=E+(1/n);
+        i++;
     }
     printf("E=%f",E);
 
