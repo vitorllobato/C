@@ -11,8 +11,6 @@ int main(){
         getchar();
         
         }
-        }
-    }
     printf("%d são positivos e %d são negativos",positivo,negativo);  
 
     return 0;

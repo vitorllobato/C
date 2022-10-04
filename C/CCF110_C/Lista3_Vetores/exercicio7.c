@@ -11,9 +11,9 @@ int main(){
         printf("Digite um numero do vetor 2: ");
         scanf("%d",&vetor2[i]);
         }
-    for (i=0; i < 20; i++){
-        vetorResultante[i]=vetor1[i];
-        vetorResultante[i+1]=vetor2[i];
+    for (i=1; i < 20; i++){
+        vetorResultante[i-1]=vetor1[i];
+        vetorResultante[i]=vetor2[i];
         i++;
         }
     printf("Vetor resultante: ");
