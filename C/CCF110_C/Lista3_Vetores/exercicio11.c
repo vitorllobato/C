@@ -24,7 +24,5 @@ int main(){
     }
     printf("] \n %d produtos são pares e %d impares.\n",par,impar);
     
-      
-
     return 0;
 }
