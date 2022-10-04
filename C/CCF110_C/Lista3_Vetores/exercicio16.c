@@ -1,17 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 int main(){
-        int i,n,comp=10,vet[comp];
+            int i,comp=10;
+            double vet[comp],n;
    
     for (i = 0; i < comp; i++){
         printf("Escreva um numero: ");
-        scanf("%d",&n);
-        vet[i]=n*n;
+        scanf("%lf",&n);
+        double A=sqrt(n);
+        vet[i]=A;
         }   
     printf("[");
     for (i = 0; i < comp; i++){ 
-        printf("%d ",vet[i]);
+        printf("%g ",vet[i]);
         }
     printf("]");
 
