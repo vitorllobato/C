@@ -9,14 +9,16 @@ int main(){
     for (i = 0; i < comp; i++){
         printf("Escreva um numero: ");
         scanf("%lf",&n);
-        double A=sqrt(n);
-        vet[i]=A;
+        vet[i]=sqrt(n);
+        if(n<0){
+            vet[i]=-1;
+        }
         }   
     printf("[");
     for (i = 0; i < comp; i++){ 
         printf("%g ",vet[i]);
         }
-    printf("]");
+    printf("] \n");
 
     return 0;
 }
