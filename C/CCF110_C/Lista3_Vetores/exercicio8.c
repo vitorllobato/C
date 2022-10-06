@@ -14,15 +14,24 @@ int main(){
         scanf("%d",&vetorB[i]);
         }
     for (int i = 0; i < n; i++){
-        vetorC[i]=(vetorA[i]+vetorB[i])/2;
-        printf("%d ",vetorC[i]);
+        if (vetorA[i]>vetorB[i]){
+            vetorC[i]=vetorA[i];
         }
+        else{
+            vetorC[i]=vetorB[i];
+            }
+        }
+        printf("\n[");
     for (int i = 0; i < n; i++){
-        vetorC[i]=(vetorA[i]+vetorB[i])/2;
-        printf("%d ",vetorC[i]);
+            printf("%d ",vetorC[i]);
+            }
+        printf("]\n");
+    printf("\n[");
+    for (int i = 0; i < n; i++){
+        vetorD[i]=(vetorA[i]+vetorB[i])/2;
+        printf("%d ",vetorD[i]);
         }
+        printf("]\n");
      
-
-
     return 0;
 }
