@@ -33,5 +33,6 @@
     "stdlib.h": "c",
     "base.h": "c"
   },
-  "C_Cpp.errorSquiggles": "Disabled"
+  "C_Cpp.errorSquiggles": "Disabled",
+  "C_Cpp_Runner.useAddressSanitizer": false
 }
