@@ -14,7 +14,7 @@ typedef struct{
 }CARTA;
 
 void gera_numero();
-void gera_carta();
+void gera_carta(); 
 
 
 #endif /* TAD_CARTA_H */
