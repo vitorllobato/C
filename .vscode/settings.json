@@ -31,7 +31,8 @@
   "files.associations": {
     "stdio.h": "c",
     "stdlib.h": "c",
-    "base.h": "c"
+    "base.h": "c",
+    "carta.h": "c"
   },
   "C_Cpp.errorSquiggles": "Disabled",
   "C_Cpp_Runner.useAddressSanitizer": false,
