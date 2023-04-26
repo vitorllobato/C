@@ -38,5 +38,5 @@ void gera_carta(){
             sprintf(carta.naipec,"E");
             break;
         }
-    printf("%s %s\n",carta.numcartac,carta.naipec);
+    printf("%s %s\n", carta.numcartac,carta.naipec);
     }
