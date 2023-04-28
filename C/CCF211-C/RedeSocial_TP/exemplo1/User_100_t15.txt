@@ -1,0 +1,3 @@
+14 104:	Decepcionante	0
+12 100:	Eu gosto	0
+7 105:	Cha de erva-doce e pessimo	1

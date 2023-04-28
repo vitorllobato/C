@@ -1,0 +1,19 @@
+6
+100;Alice
+101;Bruno
+102;Carlos
+103;Daniela
+104;Edgar
+105;Fernanda
+1;2;102;103
+2;1;102;300;ingles e muito chato nao tem jeito
+3;1;103;301;mas tem que aprender
+4;4;102;301
+5;0;102
+6;5;103
+7;2;103;100
+8;2;103;101
+9;1;103;302;provinha de aeds1 hoje hein
+10;4;101;300
+11;4;100;302
+12;0;102

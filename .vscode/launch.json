@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/vitor/C/C/CCF110_C",
-      "program": "/home/vitor/C/C/CCF110_C/build/Debug/outDebug",
+      "cwd": "/home/vitor/C/C/CCF211-C/RedeSocial_TP",
+      "program": "/home/vitor/C/C/CCF211-C/RedeSocial_TP/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

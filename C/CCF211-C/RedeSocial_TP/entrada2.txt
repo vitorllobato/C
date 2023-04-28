@@ -1,0 +1,22 @@
+6
+100;Alice
+101;Bruno
+102;Carlos
+103;Daniela
+104;Edgar
+105;Fernanda
+1;2;100;101
+2;2;100;102
+3;2;100;103
+4;2;104;102
+5;2;105;101
+6;1;101;200;Adoro rainbow goblins do masayoshi takanaka
+7;1;105;201;nunca ouvi mas o nome e interessante
+8;4;105;200
+9;4;100;200
+10;4;101;201
+11;2;104;101
+12;0;104
+13;0;105
+14;3;100;102
+15;5;100
