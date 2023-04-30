@@ -8,8 +8,7 @@ void inicializarRede(REDE* rede){
     rede->n_users = 0;
 }
 
-void lerArquivo(FILE* file, REDE* rede){
-    FILE* arquivo = fopen(file, "r");
+void lerArquivo(FILE* arquivo, REDE* rede){
     if(arquivo == NULL){
         printf("Erro ao abrir arquivo.\n");
         exit(1);
@@ -99,7 +98,7 @@ void lerArquivo(FILE* file, REDE* rede){
                     if(aux->ID == id1){
                         while(aux->L_mensagens != NULL){
                             if(aux->L_mensagens->ID == idmensagem){
-                                curtirMensagem(aux, idmensagem);
+                                curtirMensagem(aux->L_mensagens, idmensagem);
                                 break;
                             }
                             aux->L_mensagens = aux->L_mensagens->proximo;
@@ -254,14 +253,14 @@ void exibirTimeline(USER* user){
 void teste(char* ordem){
     FILE* arquivo;
     if(strcmp(ordem,"teste1")==0){ 
-    arquivo = fopen("entrada1.txt", "r");
+        arquivo = fopen("entrada1.txt", "r");
     }else if(strcmp(ordem,"teste2")==0){
-    arquivo = fopen("entrada2.txt", "r");
+        arquivo = fopen("entrada2.txt", "r");
     }else if(strcmp(ordem,"teste3")==0){
-    arquivo = fopen("entrada3.txt", "r");
+        arquivo = fopen("entrada3.txt", "r");
     }
     
-    lerArquivo(arquivo,&rede);
+    REDE rede;
+    lerArquivo(arquivo, &rede);
     fclose(arquivo);
 }
-
