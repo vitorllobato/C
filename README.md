@@ -1,2 +1,2 @@
 # C
-Armazenar projetos e exercícios da disciplina de CCF110
+Armazenar projetos e exercícios feitos na linguagem C.
