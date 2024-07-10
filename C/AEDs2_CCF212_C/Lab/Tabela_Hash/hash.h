@@ -9,15 +9,16 @@
 #endif // HASH_H
 
 typedef struct tripulante{
-    int codigo, incremento_tabela;
-    char nome[50]
+    int ascii;
+    char nome[50];
+    char id[6];
+
     }tripulante;
 
-int aviao[7];
+tripulante aviao[7], lista[7];
 
-void recebeAviao(FILE* arquivo, int* aviao);
-void embarque();
-void consulta();
-void exibeAviao();
-void hashUniversal();
-
+void recebeAviao(FILE* arquivo, tripulante* lista);
+void embarque(tripulante* lista,tripulante* aviao);
+void consulta(char nome, tripulante* aviao);
+void hashUniversal(tripulante* lista,tripulante* aviao);
+void nomeParaAscii(char *nome,int *asciiValues);
