@@ -1,67 +1,70 @@
 #include "hash.h"
 
-void recebeAviao(FILE* arquivo, tripulante* lista){
+void recebeAviao(FILE* arquivo, tripulante* lista, tripulante* aviao){
     if(arquivo == NULL){
-        printf("Erro ao abrir arquivo.\n");
+        printf("Erro ao abrir arquivof.\n");
         exit(1);
         }
     for (int i = 0; i < 7; i++){
         fscanf(arquivo, "%s %s", lista[i].nome, lista[i].id);
+        aviao[i].nome[0] = '\0';
         }
     }
 
-void nomeParaAscii(char *nome, int* asciiValues) {
-    int i;
-    for (i = 0; nome[i] != '\0'; i++) {
-        asciiValues[i] = nome[i]; 
+void embarque(tripulante* lista, tripulante* aviao) {
+   void embarque(tripulante* lista, tripulante* aviao) {
+    for (int i = 0; i < 7; i++) {
+        int ascii = 0;
+        // Calcular a soma dos valores ASCII dos caracteres do nome
+        for (int k = 0; lista[i].nome[k] != '\0'; k++) {
+            ascii += lista[i].nome[k];
+        }
+        int hash = ascii % 7;
+
+        // Probing linear para lidar com colisões
+        while (aviao[hash].nome[0] != '\0') {
+            hash = (hash + 1) % 7;
+        }
+        
+        strcpy(aviao[hash].nome, lista[i].nome);
+        strcpy(aviao[hash].id, lista[i].id);
     }
-    asciiValues[i] = -1; 
 }
-
-void embarque(tripulante* lista,tripulante* aviao){
-    for (int i = 0; i < 7; i++){
-        hashUniversal(*lista[i], aviao);
-        printf("Embarque realizado com sucesso.\n");
-        return;
-        }
-    }
-
-void consulta(char nome, tripulante* aviao){
-    printf ("Consulta de tripulantes.\n");
-    scanf("%s", &nome);
-    for (int i = 0; i < 7; i++){
+    for(int i = 0; i < 7; i++){
         printf("Nome: %s\n", aviao[i].nome);
         printf("ID: %s\n", aviao[i].id);
+        printf("Poltrona: %d\n", i);
+        printf("\n");
         }
-    }
-
-int hashUniversal(tripulante lista, tripulante* aviao) {
-    int asciiValues[50];
-    nomeParaAscii(lista.nome, asciiValues);
-    int i = 0;
-    int hash = 0;
-    while (asciiValues[i] != -1) {
-        hash += asciiValues[i];
-        i++;
-    }
-    hash = hash % 7;
-    if (aviao[hash].ascii == 0) {
-        aviao[hash] = *lista;
-        return hash;
-    } else {
-        return -1;
-    }
 }
 
-void main(){
-    FILE* arquivo = fopen("tripulantes.txt", "r");
+void consultaPoltrona(char nome, tripulante* aviao){
+    int ascii = 0;
+    while (nome != '\0'){
+        ascii += nome;
+        }
+    int hash = ascii % 7;
+    printf("Nome: %s\n", aviao[hash].nome);
+    printf("ID: %s\n", aviao[hash].id);
+    printf("Poltrona: %d\n", hash);
+}
+
+int main(){
+    char nome[50];
+    int opcao;
+    FILE* arquivo = fopen("tripulacao.txt", "r");
     if(arquivo == NULL){
         printf("Erro ao abrir arquivo.\n");
         exit(1);
         }
-    tripulante aviao[7], lista[7];
-    recebeAviao(arquivo, lista);
+    recebeAviao(arquivo,lista,aviao);
     embarque(lista, aviao);
-    consulta('a', aviao);
-    fclose(arquivo);
-    }
+    /*printf("Lista de tripulantes:\n");
+    printf("Gostaria de consultar algum triplante?\n 1-Sim\n 2-Não\n");
+    scanf("%d", &opcao);
+    printf("Digite o nome do tripulante: ");
+    scanf("%s", nome);
+    if(opcao == 1){
+        consultaPoltrona(&nome, aviao);
+        }*/
+}
